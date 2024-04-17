@@ -44,7 +44,7 @@ const CreateUser = () => {
                 <div className="form-group row mt-2">
                   <label className="col-sm-2 col-form-label">Email</label>
                   <div className="col-sm-10">
-                    <input type="text" onChange={(e)=> setEmail(e.target.value)} className="form-control" required placeholder="Email" value={email} />
+                    <input type="email" onChange={(e)=> setEmail(e.target.value)} className="form-control" required placeholder="Email" value={email} />
                   </div>
                 </div>
                 <div className="form-group row mt-2 mb-2">
