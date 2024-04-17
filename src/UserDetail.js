@@ -3,10 +3,10 @@ import useFetch from "./useFetch";
 
 const UserDetail = () => {
     const { id } = useParams();
-    const { data: user, error, IsPending }  = useFetch('https://jsonplaceholder.typicode.com/users/' + id)
+    const { data: user, error, IsPending }  = useFetch('http://localhost:3000/users/' + id)
     const navigate = useNavigate();
     const handleDelete = () => {
-        fetch('https://jsonplaceholder.typicode.com/users/' + id, {
+        fetch('http://localhost:3000/users/' + id, {
             method: 'DELETE',
         }).then(() => { console.log('User deleted'); navigate('/'); })
     }

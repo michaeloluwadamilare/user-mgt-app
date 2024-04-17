@@ -4,7 +4,7 @@ import User from "./User";
 
 const Home = () => {
   
-  const { data:users, error, IsPending } = useFetch('https://jsonplaceholder.typicode.com/users');
+  const { data:users, error, IsPending } = useFetch('http://localhost:3000/users');
 
   return (
     <>
