@@ -3,10 +3,10 @@ import useFetch from "./useFetch";
 
 const UserDetail = () => {
     const { id } = useParams();
-    const { data: user, error, IsPending }  = useFetch('http://localhost:3000/users/' + id)
+    const { data: user, error, IsPending }  = useFetch('http://localhost:8000/users/' + id)
     const navigate = useNavigate();
     const handleDelete = () => {
-        fetch('http://localhost:3000/users/' + id, {
+        fetch('http://localhost:8000/users/' + id, {
             method: 'DELETE',
         }).then(() => { console.log('User deleted'); navigate('/'); })
     }
@@ -21,6 +21,7 @@ const UserDetail = () => {
                     <p>Username: { user.username } </p>
                     <p>Email: { user.email } </p>
                     <p>Phone: { user.phone } </p>
+                    
                     <button className="btn btn-danger btn-sm" onClick={handleDelete}>Delete</button>
                 
                 </div>
