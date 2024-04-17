@@ -5,12 +5,14 @@ const User = ({ users }) => {
     
     const userCard = users.map((user) => {
         return (
-            <div className="card mt-2" key={ user.id }>
-                <div className="card-body">
-                    <h3>{user.name}</h3>
-                    <p>{user.username}</p>
-                    <p>{user.email}</p>
-                    <Link to={`/users/${user.id}`} className="btn btn-success btn-sm">View</Link>
+            <div className="col-md-3 mt-3" key={ user.id }>
+                <div className="card">
+                    <div className="card-body">
+                        <h3>{user.name}</h3>
+                        <p>{user.username}</p>
+                        <p>{user.email}</p>
+                        <Link to={`/users/${user.id}`} className="btn btn-success btn-sm">View</Link>
+                    </div>
                 </div>
             </div>
 
@@ -19,7 +21,11 @@ const User = ({ users }) => {
 
     return(
         <>
-            { userCard }
+            <div className="container">
+                <div className="row"> 
+                    { userCard }
+                </div>
+            </div>
         </>
     )
 }
