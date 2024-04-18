@@ -1,14 +1,44 @@
 import { useParams, useNavigate} from "react-router-dom";
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import useFetch from "./useFetch";
 
 const UserDetail = () => {
     const { id } = useParams();
     const { data: user, error, IsPending }  = useFetch('http://localhost:8000/users/' + id)
     const navigate = useNavigate();
+    const MySwal = withReactContent(Swal);
+
     const handleDelete = () => {
-        fetch('http://localhost:8000/users/' + id, {
-            method: 'DELETE',
-        }).then(() => { console.log('User deleted'); navigate('/'); })
+        MySwal.fire({
+            title: 'Are you sure?',
+            text: 'You will not be able to recover this user record!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+              MySwal.fire(
+                'Deleted!',
+                'User has been deleted.',
+                'success'
+              );
+
+              fetch('http://localhost:8000/users/' + id, {
+                method: 'DELETE',
+                }).then(() => { console.log('User deleted'); navigate('/'); })
+
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+              MySwal.fire(
+                'Cancelled',
+                'Your item is safe',
+                'error'
+              );
+            }
+        });
+
     }
     return (
         <>
