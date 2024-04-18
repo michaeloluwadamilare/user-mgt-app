@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <>
-      <SearchBox searchChange={handleSearch} term={searchTerm} />
+      <SearchBox searchChange={handleSearch} />
       { error && <p> {error} </p>}
       { IsPending && <p>Loading...</p>}
       { filteredUsers && <User users={filteredUsers} />}
