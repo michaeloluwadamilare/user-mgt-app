@@ -28,12 +28,12 @@ const UserDetail = () => {
 
               fetch('http://localhost:8000/users/' + id, {
                 method: 'DELETE',
-                }).then(() => { console.log('User deleted'); navigate('/'); })
+                }).then(() => { navigate('/'); })
 
             } else if (result.dismiss === Swal.DismissReason.cancel) {
               MySwal.fire(
                 'Cancelled',
-                'Your item is safe',
+                'User data is safe',
                 'error'
               );
             }
