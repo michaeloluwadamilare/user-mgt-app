@@ -22,7 +22,9 @@ const UserDetail = () => {
                     <p>Email: { user.email } </p>
                     <p>Phone: { user.phone } </p>
                     
-                    <button className="btn btn-danger btn-sm" onClick={handleDelete}>Delete</button>
+                    <button className="btn btn-danger btn-sm me-1" onClick={handleDelete}><i className="bi bi-trash"></i></button>
+                    <button className="btn btn-primary btn-sm"><i className="bi bi-pen"></i></button>
+
                 
                 </div>
                 

@@ -13,6 +13,34 @@
       "username": "Bret",
       "email": "Sincere@april.biz",
       "phone": "1-770-736-8031 x56442"
+    },
+    {
+      "id": "8994",
+      "name": "Tolu Jack",
+      "username": "olujack",
+      "email": "olujack@gmail.com",
+      "phone": "08134834256"
+    },
+    {
+      "id": "8580",
+      "name": "Jude Okoye",
+      "username": "Judooo",
+      "phone": "09023457689",
+      "email": "judooo@gmail.in"
+    },
+    {
+      "id": "f8ce",
+      "name": "Mike Fortune",
+      "username": "mikefx",
+      "phone": "09123456432",
+      "email": "fx@m.in"
+    },
+    {
+      "id": "da31",
+      "name": "Cersei Lannister",
+      "username": "cyrax",
+      "phone": "08812345234",
+      "email": "cersei@m.fx"
     }
   ]
 }
